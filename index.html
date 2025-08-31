@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoilSense - Sensor Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌱 SoilSense Dashboard</h1>
+            <p>Real-time sensor data monitoring</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="current-readings">
+                <h2>Current Readings</h2>
+                <div class="sensor-cards">
+                    <div class="card temperature">
+                        <h3>🌡️ Temperature</h3>
+                        <div class="value" id="temperature">-- °C</div>
+                        <div class="timestamp" id="temp-time">--</div>
+                    </div>
+                    <div class="card humidity">
+                        <h3>💧 Humidity</h3>
+                        <div class="value" id="humidity">-- %</div>
+                        <div class="timestamp" id="hum-time">--</div>
+                    </div>
+                    <div class="card soil-moisture">
+                        <h3>🌱 Soil Moisture</h3>
+                        <div class="value" id="soil-moisture">-- %</div>
+                        <div class="timestamp" id="soil-time">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-table">
+                <h2>Historical Data</h2>
+                <div class="controls">
+                    <button id="refresh-btn">🔄 Refresh Data</button>
+                    <button id="auto-refresh-btn">⏯️ Auto Refresh</button>
+                </div>
+                <div class="table-container">
+                    <table id="sensor-table">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Temperature (°C)</th>
+                                <th>Humidity (%)</th>
+                                <th>Soil Moisture (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="status" id="status">
+            <span>🔴 Not connected</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
